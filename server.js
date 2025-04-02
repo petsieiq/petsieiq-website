@@ -4,10 +4,15 @@ const express = require("express");
 var app = express();
 const path = require("path");
 const hbs = require('hbs');
+const cron = require('node-cron')
 
 var mongo_client = require("mongodb").MongoClient;
 
 class DatabaseAPI{
+    constructor(){
+
+    }
+
     //databse setup
     async init() {
         //let url = "mongodb://localhost:27017/";
@@ -46,5 +51,14 @@ app.post('/',async (req, res) => {
 
 //run the application
 const server = app.listen(3000);
+
+//init cron job
+const http = require('http')
+
+function cron_function(){
+    http.get('https://petsieiq.com', resp => {})
+}
+
+cron.schedule('0 17 * * 5', cron_function);
 
 module.exports = app;
