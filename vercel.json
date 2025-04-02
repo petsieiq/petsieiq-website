@@ -15,11 +15,5 @@
                 "POST"
             ]
         }
-    ],
-    "crons": [
-        {
-            "path": "ping",
-            "schedule": "0 5 * * *"
-        }
     ]
 }
