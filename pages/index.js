@@ -73,12 +73,26 @@ export default function Home() {
 
   return (
     <>
-      <head>
+      <Head>
         <title>PetsieIQ - Welcome</title>
-        <link>>
-      </head>
-      
-      {/* Rest of your JSX code here */}
+      </Head>
+
+      {/* You can add your form and other UI elements below */}
+      <main>
+        <h1>Welcome to PetsieIQ</h1>
+        <input
+          type="email"
+          value={state.email}
+          onChange={(e) => setState({ ...state, email: e.target.value })}
+          placeholder="Enter your email"
+        />
+        <button onClick={handleSubmit} disabled={state.isSubmitting}>
+          {state.isSubmitting ? "Submitting..." : "Subscribe"}
+        </button>
+
+        {state.showError && <p style={{ color: 'red' }}>{state.errorMessage}</p>}
+        {state.showSuccess && <p style={{ color: 'green' }}>Subscription successful!</p>}
+      </main>
     </>
   );
 }
