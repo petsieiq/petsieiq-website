@@ -1,7 +1,7 @@
 import { builder, BuilderComponent } from '@builder.io/react';
 import { useEffect, useState } from 'react';
 
-// Initialize Builder with your organization's API key
+// ✅ FIXED: API key wrapped in quotes
 builder.init('381e5855759f41dcb2768e737d1919d7');
 
 export default function Home() {
