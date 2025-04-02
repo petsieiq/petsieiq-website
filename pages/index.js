@@ -9,16 +9,15 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Fetch the page content
     async function fetchContent() {
       try {
-        const content = await builder.get('page', {
+        const content = await builder.get('figma-imports', {
           url: window.location.pathname,
           userAttributes: {
             urlPath: window.location.pathname
           }
         }).promise();
-        
+
         setPageData(content);
         setIsLoading(false);
       } catch (error) {
@@ -30,19 +29,17 @@ export default function Home() {
     fetchContent();
   }, []);
 
-  // Show loading state
   if (isLoading) {
     return <div>Loading...</div>;
   }
 
-  // Show 404 if no content is found
   if (!pageData) {
     return <div>Page not found</div>;
   }
 
   return (
     <div>
-      <buil>ercomponent>
+      <BuilderComponent model="figma-imports" content={pageData} />
     </div>
   );
 }
