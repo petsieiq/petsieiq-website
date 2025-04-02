@@ -22,7 +22,7 @@ class DatabaseAPI{
     }
 }
 
-db_obj = new db_api.DatabaseAPI();
+db_obj = new DatabaseAPI();
 db_obj.init();
 
 //set the view engine to handlebars
