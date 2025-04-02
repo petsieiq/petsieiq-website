@@ -10,7 +10,16 @@
         {
             "src": "/(.*)",
             "dest": "server.js",
-            "methods":["GET","POST"]
+            "methods": [
+                "GET",
+                "POST"
+            ]
+        }
+    ],
+    "crons": [
+        {
+            "path": "ping",
+            "schedule": "0 5 * * *"
         }
     ]
 }
