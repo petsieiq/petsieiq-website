@@ -8,10 +8,6 @@ const hbs = require('hbs');
 var mongo_client = require("mongodb").MongoClient;
 
 class DatabaseAPI{
-    constructor(){
-
-    }
-
     //databse setup
     async init() {
         //let url = "mongodb://localhost:27017/";
@@ -25,8 +21,6 @@ class DatabaseAPI{
         let reps =await this.email_collection.insertOne(data);
     }
 }
-
-module.exports = {DatabaseAPI:DatabaseAPI};
 
 db_obj = new db_api.DatabaseAPI();
 db_obj.init();
