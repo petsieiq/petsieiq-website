@@ -7,7 +7,7 @@ class DatabaseAPI{
 
     //databse setup
     async init() {
-        let url = "mongodb://localhost:27017/";
+        let url = "mongodb+srv://admin:ey3Q76SUjTgxnjBc@petsieiqdb.07dy5vz.mongodb.net/?retryWrites=true&w=majority&appName=PetsieIQDB";
         let db_conn =await mongo_client.connect(url);
         this.db_obj = await db_conn.db("email_db");
         this.email_collection =await this.db_obj.createCollection("emails");
